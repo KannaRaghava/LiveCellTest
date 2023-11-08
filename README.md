@@ -58,7 +58,6 @@ To deploy the models using Docker, follow these steps:
 
    ```bash
    git clone https://github.com/KannaRaghava/LiveCellTest.git
-   cd your-segmentation-models
 
 Build the Docker image:
 ```bash
