@@ -1,0 +1,19 @@
+FROM ubuntu:20.04
+
+EXPOSE 80
+
+# Inject conda packages from the CI/CD pipeline to run 'conda create env' only once
+ENV PATH=/opt/conda/bin:$PATH
+ENV PATH=/opt/conda/lib:$PATH
+ENV LD_LIBRARY_PATH=/opt/conda/lib
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONIOENCODING=UTF-8
+COPY /opt/conda /opt/conda
+
+COPY requirements.txt .
+
+RUN pip install -r environment.yml
+
+COPY app.py .
+
+CMD ["python", "app.py"]

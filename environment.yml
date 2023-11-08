@@ -1,0 +1,13 @@
+name: livecell_task
+channels:
+  - conda-forge
+  - anaconda
+dependencies:
+  - python>=3.8,<=3.9.1
+  - uvicorn==0.13.4
+  - fastapi==0.65.0
+  - pip
+  - pip:
+    - --find-links https://download.pytorch.org/whl/torch_stable.html
+    - torch==1.7.1+cpu
+    - torchvision==0.8.2+cpu
